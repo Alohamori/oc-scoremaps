@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Only Connect Scorigami Heatmaps</title>
+    <meta charset='utf-8'>
+    <script src="js/vega.js"></script>
+    <script src="js/vega-lite.js"></script>
+    <script src="js/vega-embed.js"></script>
+    <link rel="stylesheet" href="ui/styles.css" />
+  </head>
+  <body>
+    <h1><i>Only Connect</i>  Scorigami Heatmaps</h1>
+    <form onchange="update()">
+      Round: <select name="round">
+        <option>Connections</option>
+        <option>Sequences</option>
+        <option>Connecting Walls</option>
+        <option>Missing Vowels</option>
+        <option>Before the Walls</option>
+        <option>After the Walls</option>
+        <option>Final Scores</option>
+        <option>Play-by-Play</option>
+      </select>&nbsp;&nbsp;&nbsp;&nbsp;
+      Metric:
+        <label><input type="radio" name="metric" value="n" checked /> frequency</label>
+        <label><input type="radio" name="metric" value="r" /> recency</label>&nbsp;&nbsp;&nbsp;&nbsp;
+      Origin:
+        <label><input type="radio" name="sort" value="descending" checked /> bottom</label>
+        <label><input type="radio" name="sort" value="ascending" /> top</label>&nbsp;&nbsp;&nbsp;&nbsp;
+      Scheme: <select name="scheme">
+        <option>viridis</option>
+        <option>cividis</option>
+        <option>inferno</option>
+        <option selected>darkmulti</option>
+        <option>darkgreen</option>
+        <option>redgrey</option>
+        <option>spectral</option>
+      </select>
+    </form><br>
+    <div id="vis"></div>
+    <script src="js/data.js"></script>
+    <script src="js/misc.js"></script>
+  </body>
+</html>
